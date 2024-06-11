@@ -1,5 +1,9 @@
+import React from "react";
 import KeystoneSDK, { KeystoneStellarSDK, UR, URType } from "@keystonehq/keystone-sdk"
 import { AnimatedQRCode, AnimatedQRScanner } from "@keystonehq/animated-qr"
+import { setupScanner } from "@keystonehq/animated-qr-lit";
+
+const VIDEO_ID = "qr-scanner-video";
 
 let stellarTransaction = {
     requestId: "9b1deb4d-3b7d-4bad-9bdd-2b0d7b3dcb6d",
@@ -25,12 +29,10 @@ export const Stellar = () => {
     // const ur = keystoneSDK.stellar.generateSignRequest(stellarTransactionHash);
 
     return <>
-        <AnimatedQRCode
-            type={ur.type}
+        <animated-qrcode-lit
             cbor={ur.cbor.toString("hex")}
-            options={{
-                capacity: 200,
-            }}
+            type={ur.type}
+            capacity={200}
         />
         <StellarScanner />
     </>;
@@ -49,5 +51,47 @@ export const StellarScanner = () => {
         console.log("error: ", errorMessage);
     }
 
-    return <AnimatedQRScanner options={{ width: 100 }} handleScan={onSucceed} handleError={onError} urTypes={[URType.StellarSignature]} />
+    const onProgress = (progress) => {
+        console.log("scan progress: ", progress);
+    }
+
+    const onCameraStatus = (isCameraReady, error) => {
+        if (!isCameraReady) {
+            if(error === "NO_WEBCAM_FOUND"){
+                console.log("No camera");
+            } else if(error === "NO_WEBCAM_ACCESS"){
+                console.log("No camera permission");
+            }
+        } else {
+            console.log("Camera ready");
+        }
+    }
+
+    React.useEffect(() => {
+        const videoElement = document.getElementById(VIDEO_ID);
+        let destroyScanner = () => {};
+        if (videoElement) {
+            destroyScanner = setupScanner({
+                video: videoElement,
+                handleScan: onSucceed,
+                handleError: onError,
+                // onProgress: onProgress,
+                // videoLoaded: onCameraStatus,
+                urTypes: [URType.StellarSignature],
+            });
+        }
+
+        return destroyScanner;
+    }, []);
+
+    return <video
+        id={VIDEO_ID}
+        style={{
+            display: "block",
+            width: 100,
+            height: 100,
+            objectFit: "cover",
+            transform: "rotateY(180deg)",
+        }}
+    ></video>;
 }
