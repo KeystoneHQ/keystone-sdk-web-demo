@@ -21,6 +21,7 @@ import {DigitalCash} from "./chains/Dash";
 import {BitcoinCash} from "./chains/Bch";
 import {Stellar} from "./chains/Stellar";
 import { HDKey } from './wallet/HDKey';
+import { KeystoneHot } from './wallet/KeystoneHot'
 
 function TabPanel(props) {
   const {children, value, index, ...other} = props;
@@ -57,6 +58,8 @@ function App() {
   return (
     <div className="App">
       <Box sx={{borderBottom: 1, borderColor: 'divider'}}>
+        <h2>Sample Chain Tx Data in QR</h2>
+        <h3>Open the console to see the result</h3>
         <Tabs value={chain} onChange={handleChainChange}>
           <Tab label="Bitcoin"/>
           <Tab label="Ethereum"/>
@@ -121,6 +124,8 @@ function App() {
         <Stellar/>
       </TabPanel>
 
+      <h2>QRCode Scanner</h2>
+      <h3>Open the console to see the result</h3>
       <Box sx={{borderBottom: 1, borderColor: 'divider'}}>
         <Tabs value={walletAction} onChange={handleWalletActionChange} aria-label="basic tabs example">
           <Tab label="Key Call"/>
@@ -128,6 +133,7 @@ function App() {
           <Tab label="HDKey"/>
           <Tab label="MultiAccounts"/>
           <Tab label="Keystone"/>
+          <Tab label="KeystoneMobile"/>
         </Tabs>
       </Box>
       <TabPanel value={walletAction} index={0}>
@@ -144,6 +150,9 @@ function App() {
       </TabPanel>
       <TabPanel value={chain} index={4}>
         <KeystoneBytes/>
+      </TabPanel>
+      <TabPanel value={walletAction} index={5}>
+        <KeystoneHot/>
       </TabPanel>
     </div>
   );
