@@ -1850,10 +1850,10 @@
     "@keystonehq/bc-ur-registry" "^0.6.4"
     uuid "^8.3.2"
 
-"@keystonehq/bc-ur-registry-cardano@^0.3.2":
-  version "0.3.2"
-  resolved "https://registry.yarnpkg.com/@keystonehq/bc-ur-registry-cardano/-/bc-ur-registry-cardano-0.3.2.tgz#cf0bc920fef8f12a0df9f4ea3dfaaa6bed63f13d"
-  integrity sha512-TNSe0NBPv8eC1fNsHwtB8TkdWSMB6lSTOVGgezmICDR57qxaEffDdbSNHKvEmRzV69ISdvVpowxZulf9VjEQig==
+"@keystonehq/bc-ur-registry-cardano@^0.3.4":
+  version "0.3.4"
+  resolved "https://registry.yarnpkg.com/@keystonehq/bc-ur-registry-cardano/-/bc-ur-registry-cardano-0.3.4.tgz#dc83b114e4b06cf6393ad9a364be100eb60c68ee"
+  integrity sha512-70DGS6GVUINiOTGqFLpD0RwkG/Ne7tdG/6GqF3iTo1Wu/tG70FCQAgo7n7Zdz7Tbz2+1/rVwZzU0ZPFwBY7xPw==
   dependencies:
     "@keystonehq/bc-ur-registry" "^0.6.4"
     uuid "^8.3.2"
@@ -1945,17 +1945,17 @@
     bs58check "^2.1.2"
     tslib "^2.3.0"
 
-"@keystonehq/keystone-sdk@^0.7.3":
-  version "0.7.3"
-  resolved "https://registry.yarnpkg.com/@keystonehq/keystone-sdk/-/keystone-sdk-0.7.3.tgz#95c1081e3654b3809a39fed53c60fb3e3f91cc2d"
-  integrity sha512-db+GxKBtzZgg63Q666j5ot5pzaDhukEl5nbUGs3R6SDw0JsA7YjD3sHD+Q9doCvorqQzz+iTRuQM+2rAm0ZQ7g==
+"@keystonehq/keystone-sdk@^0.7.5":
+  version "0.7.5"
+  resolved "https://registry.yarnpkg.com/@keystonehq/keystone-sdk/-/keystone-sdk-0.7.5.tgz#c2b06d2d649db72487484a7bc844a1ac0a23e521"
+  integrity sha512-/OtyqaXxjiiKzzjpmGMpeqX/f/PNXk5G3yd/sM+nl7FVJKiMUoQmfEgAXMExdN3klINmMjZ2T33ZIDX72jh8qA==
   dependencies:
     "@bufbuild/protobuf" "^1.2.0"
     "@keystonehq/bc-ur-registry" "^0.6.4"
     "@keystonehq/bc-ur-registry-aptos" "^0.6.3"
     "@keystonehq/bc-ur-registry-arweave" "^0.5.3"
     "@keystonehq/bc-ur-registry-btc" "^0.1.1"
-    "@keystonehq/bc-ur-registry-cardano" "^0.3.2"
+    "@keystonehq/bc-ur-registry-cardano" "^0.3.4"
     "@keystonehq/bc-ur-registry-cosmos" "^0.5.3"
     "@keystonehq/bc-ur-registry-eth" "^0.20.1"
     "@keystonehq/bc-ur-registry-evm" "^0.5.3"
