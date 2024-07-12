@@ -13,7 +13,6 @@ let cardanoCatalystVotingRequest = {
     requestId: "9b1deb4d-3b7d-4bad-9bdd-2b0d7b3dcb6d",
     path: "m/1852'/1815'/0'/2/0",
     delegations: [{
-        xfp: "52744703",
         hdPath: "m/1694'/1815'/1'/0'/0'",
         weight: 1
     }],
@@ -78,6 +77,7 @@ export const CardanoScanner = () => {
         const signature = keystoneSDK.cardano.parseCatalystSignature(new UR(Buffer.from(cbor, "hex"), type))
         console.log("signature: ", signature.signature.toString("hex"));
         console.log("request id: ", signature.requestId);
+        console.log('vote prv:', signature.votePrvKeys);
     }
     const onError = (errorMessage) => {
         console.log("error: ",errorMessage);
