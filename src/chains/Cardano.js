@@ -13,7 +13,7 @@ let cardanoCatalystVotingRequest = {
     requestId: "9b1deb4d-3b7d-4bad-9bdd-2b0d7b3dcb6d",
     path: "m/1852'/1815'/0'/2/0",
     delegations: [{
-        hdPath: "m/1694'/1815'/1'/0'/0'",
+        pubKey: "a6a3c0447aeb9cc54cf6422ba32b294e5e1c3ef6d782f2acff4a70694c4d1663",
         weight: 1
     }],
     stakePub: "ca0e65d9bb8d0dca5e88adc5e1c644cc7d62e5a139350330281ed7e3a6938d2c",
@@ -62,6 +62,7 @@ let cardanoSignRequest = {
 export const Cardano = () => {
     const keystoneSDK = new KeystoneSDK();
     // const ur = keystoneSDK.cardano.generateSignDataRequest(cardanoSignDataRequest);
+    // const ur = keystoneSDK.cardano.generateSignRequest(cardanoSignRequest);
     const ur = keystoneSDK.cardano.generateCatalystRequest(cardanoCatalystVotingRequest);
 
     return <>
