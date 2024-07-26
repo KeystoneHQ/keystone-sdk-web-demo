@@ -5,6 +5,7 @@ let cardanoSignDataRequest = {
     requestId: "9b1deb4d-3b7d-4bad-9bdd-2b0d7b3dcb6d",
     path: "m/1852'/1815'/0'/0/0",
     xfp: "52744703",
+    stakePub: "ca0e65d9bb8d0dca5e88adc5e1c644cc7d62e5a139350330281ed7e3a6938d2c",
     payload: "846a5369676e6174757265315882a301270458390069fa1bd9338574702283d8fb71f8cce1831c3ea4854563f5e4043aea33a4f1f468454744b2ff3644b2ab79d48e76a3187f902fe8a1bcfaad676164647265737358390069fa1bd9338574702283d8fb71f8cce1831c3ea4854563f5e4043aea33a4f1f468454744b2ff3644b2ab79d48e76a3187f902fe8a1bcfaad4043abc123",
     origin: "cardano-wallet"
 }
@@ -13,7 +14,7 @@ let cardanoCatalystVotingRequest = {
     requestId: "9b1deb4d-3b7d-4bad-9bdd-2b0d7b3dcb6d",
     path: "m/1852'/1815'/0'/2/0",
     delegations: [{
-        hdPath: "m/1694'/1815'/1'/0'/0'",
+        pubKey: "a6a3c0447aeb9cc54cf6422ba32b294e5e1c3ef6d782f2acff4a70694c4d1663",
         weight: 1
     }],
     stakePub: "ca0e65d9bb8d0dca5e88adc5e1c644cc7d62e5a139350330281ed7e3a6938d2c",
@@ -61,9 +62,10 @@ let cardanoSignRequest = {
 
 export const Cardano = () => {
     const keystoneSDK = new KeystoneSDK();
-    // const ur = keystoneSDK.cardano.generateSignDataRequest(cardanoSignDataRequest);
-    const ur = keystoneSDK.cardano.generateCatalystRequest(cardanoCatalystVotingRequest);
-
+    const ur = keystoneSDK.cardano.generateSignDataRequest(cardanoSignDataRequest);
+    // const ur = keystoneSDK.cardano.generateSignRequest(cardanoSignRequest);
+    // const ur = keystoneSDK.cardano.generateCatalystRequest(cardanoCatalystVotingRequest);
+    console.log("cbor =>", ur.cbor.toString("hex"));
     return <>
         <AnimatedQRCode type={ur.type} cbor={ur.cbor.toString("hex")} />
         <CardanoScanner />
