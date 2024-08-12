@@ -1945,13 +1945,22 @@
     bs58check "^2.1.2"
     tslib "^2.3.0"
 
-"@keystonehq/keystone-sdk@^0.7.9":
-  version "0.7.9"
-  resolved "https://registry.yarnpkg.com/@keystonehq/keystone-sdk/-/keystone-sdk-0.7.9.tgz#70ecc17a76fb9521fc667f91f07fbeb73ee82009"
-  integrity sha512-kWsbuLcC6gBc/6IQv3G+mXbp+LZq7ReMiVT2rAnivR/9XcBss8SSplbnj/MIR6EWcpTn/XUcso68ruluIOGgsg==
+"@keystonehq/bc-ur-registry@^0.7.0":
+  version "0.7.0"
+  resolved "https://registry.yarnpkg.com/@keystonehq/bc-ur-registry/-/bc-ur-registry-0.7.0.tgz#d0322d6a5cd2796dd0e40662c47b5a95ec917d9a"
+  integrity sha512-E6NUd6Y+YYM+IcYGOEXfO9+MU1s63Qjm8brtHftvNhxbdXhGtTYIsa4FQmqZ6q34q91bMkMqUQFsQYPmIxcxfg==
+  dependencies:
+    "@ngraveio/bc-ur" "^1.1.5"
+    bs58check "^2.1.2"
+    tslib "^2.3.0"
+
+"@keystonehq/keystone-sdk@^0.8.0":
+  version "0.8.0"
+  resolved "https://registry.yarnpkg.com/@keystonehq/keystone-sdk/-/keystone-sdk-0.8.0.tgz#8924ff33f40431615aa9da598237883341b06505"
+  integrity sha512-9lzjwwWLrJEVOraIZdwD8HIVNnIxWVJMd8H/JoL9288Ist2gLcV7KstGfS0HyxARwc8pmWEXFXR52GP2gSOR0g==
   dependencies:
     "@bufbuild/protobuf" "^1.2.0"
-    "@keystonehq/bc-ur-registry" "^0.6.4"
+    "@keystonehq/bc-ur-registry" "^0.7.0"
     "@keystonehq/bc-ur-registry-aptos" "^0.6.3"
     "@keystonehq/bc-ur-registry-arweave" "^0.5.3"
     "@keystonehq/bc-ur-registry-btc" "^0.1.1"
