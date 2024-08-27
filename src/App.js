@@ -1,5 +1,6 @@
 import './App.css';
 import {Bitcoin} from "./chains/Bitcoin";
+import {BitcoinTaproot} from "./chains/BitcoinTaproot";
 import {Ethereum} from "./chains/Ethereum";
 import {MultiAccounts} from "./wallet/MultiAccounts";
 import {Solana} from "./chains/Solana";
@@ -76,6 +77,7 @@ function App() {
           <Tab label="Dash"/>
           <Tab label="Bch"/>
           <Tab label="Stellar"/>
+          <Tab label="BitcoinTaproot"/>
         </Tabs>
       </Box>
       <TabPanel value={chain} index={0}>
@@ -122,6 +124,9 @@ function App() {
       </TabPanel>
       <TabPanel value={chain} index={14}>
         <Stellar/>
+      </TabPanel>
+      <TabPanel value={chain} index={15}>
+        <BitcoinTaproot/>
       </TabPanel>
 
       <h2>QRCode Scanner</h2>
