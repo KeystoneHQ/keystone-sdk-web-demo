@@ -4,6 +4,7 @@
   "private": true,
   "dependencies": {
     "@cvbb/qr-protocol": "^2.0.4",
+    "@bitcoin-js/tiny-secp256k1-asmjs": "^2.2.3",
     "@emotion/react": "^11.10.8",
     "@emotion/styled": "^11.10.8",
     "@ethereumjs/common": "^3.1.2",
