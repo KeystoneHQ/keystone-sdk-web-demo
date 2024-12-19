@@ -7,6 +7,8 @@ export const KeystoneBytes = () => {
   const onSucceed = ({type, cbor}) => {
     setResult(cbor);
     console.log("bytes: ", cbor);
+    let result = Buffer.from(cbor, 'hex').toString('utf8')
+    console.log("result string: ", result);
   }
 
   const onError = (errorMessage) => {
