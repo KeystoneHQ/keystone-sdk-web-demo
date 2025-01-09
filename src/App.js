@@ -20,6 +20,7 @@ import {Arweave} from "./chains/Arweave";
 import {Litecoin} from "./chains/Litecoin";
 import {DigitalCash} from "./chains/Dash";
 import {BitcoinCash} from "./chains/Bch";
+import { Avalanche, AvalancheScanner } from './chains/Avalanche';
 import {Stellar} from "./chains/Stellar";
 import { HDKey } from './wallet/HDKey';
 import { KeystoneHot } from './wallet/KeystoneHot'
@@ -78,6 +79,7 @@ function App() {
           <Tab label="Bch"/>
           <Tab label="Stellar"/>
           <Tab label="BitcoinTaproot"/>
+          <Tab label="Avalanche"/>
         </Tabs>
       </Box>
       <TabPanel value={chain} index={0}>
@@ -127,6 +129,10 @@ function App() {
       </TabPanel>
       <TabPanel value={chain} index={15}>
         <BitcoinTaproot/>
+      </TabPanel>
+      <TabPanel value={chain} index={16}>
+        <Avalanche />
+        <AvalancheScanner />
       </TabPanel>
 
       <h2>QRCode Scanner</h2>
