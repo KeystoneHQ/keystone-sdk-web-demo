@@ -4,13 +4,13 @@ import {AnimatedQRCode, AnimatedQRScanner} from "@keystonehq/animated-qr"
 let xrpTransaction = {
     TransactionType: "Payment",
     Amount: "10000000",
-    Destination: "rHSW257ioNLCsyGNjWqk1RetxZmWYjkAFy",
+    Destination: "rGUmkyLbvqGF3hwX4qwGHdrzLdY2Qpskum",
     Flags: 2147483648,
-    Account: "rEHsDJtuyLguLQdww4UDUfmBHWSd8EUvKg",
+    Account: "rDur9gS6DjqrwGnPRa4RZeiPpkqtv2Gf2m",
     Fee: "12",
-    Sequence: 79991857,
+    Sequence: 82376388,
     LastLedgerSequence: 80032220,
-    SigningPubKey: "0263e0f578081132fd9e12829c67b9e68185d7f7a8bb37b78f98e976c3d9d163e6"
+    SigningPubKey: "03b91e16e98ba86b62a52aaa2d41c114b36c8bfcd862b1eced77dc5d77676510f8"
 }
 
 export const Xrp = () => {
