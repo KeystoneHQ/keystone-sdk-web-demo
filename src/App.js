@@ -7,6 +7,7 @@ import {Solana} from "./chains/Solana";
 import {Cosmos} from "./chains/Cosmos";
 import {Aptos} from "./chains/Aptos";
 import {KeyDerivationCall} from "./wallet/KeyDerivationCall";
+import {DeriveContextHashCall} from "./wallet/DeriveContextHashCall";
 import {Box, Tab, Tabs} from "@mui/material";
 import {useState} from "react";
 import {Cardano} from "./chains/Cardano";
@@ -145,6 +146,7 @@ function App() {
           <Tab label="MultiAccounts"/>
           <Tab label="Keystone"/>
           <Tab label="KeystoneMobile"/>
+          <Tab label="Context Hash"/>
         </Tabs>
       </Box>
       <TabPanel value={walletAction} index={0}>
@@ -159,11 +161,14 @@ function App() {
       <TabPanel value={walletAction} index={3}>
         <MultiAccounts />
       </TabPanel>
-      <TabPanel value={chain} index={4}>
+      <TabPanel value={walletAction} index={4}>
         <KeystoneBytes/>
       </TabPanel>
       <TabPanel value={walletAction} index={5}>
         <KeystoneHot/>
+      </TabPanel>
+      <TabPanel value={walletAction} index={6}>
+        <DeriveContextHashCall/>
       </TabPanel>
     </div>
   );

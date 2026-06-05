@@ -9,8 +9,12 @@ module.exports = function override(config, env) {
         http: require.resolve('stream-http'),
         https: require.resolve('https-browserify'),
         os: require.resolve('os-browserify/browser'),
+        events: require.resolve('events/'),
+        util: require.resolve('util/'),
         buffer: require.resolve('buffer'),
         stream: require.resolve('stream-browserify'),
+        string_decoder: require.resolve('string_decoder/'),
+        vm: require.resolve('vm-browserify'),
         zlib: require.resolve('browserify-zlib'),
     };
     config.plugins.push(
